@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8">
+        <title>Oops!</title>
+        <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    </head>
+    <div class="errorPage">
+        <span class="oops">Oops!</span><br />
+        <img th:src="@{/MissingPage.png}" />
+        <p>There seems to be a problem with the page you requested
+        (<span th:text="${path}"></span>).</p>
+        <p th:text="${'Details: ' + message}"></p>
+    </div>
+
+</html>

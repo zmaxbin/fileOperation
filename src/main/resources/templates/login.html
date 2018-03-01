@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>登录页面</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-3 column">
+            <h4>用户登录页面</h4>
+            <form role="form" method="POST" th:action="@{/front/loginVerify}" th:object="${userEntity}">
+
+                <label for="username">用户名</label><input type="text" class="form-control" id="username" th:field="*{username}" />
+
+                <label for="password">密码</label><input type="password" class="form-control" id="password" th:field="*{password}" />
+
+                <button type="submit" class="btn btn-default">登录</button>
+            </form>
+
+            <ul class="nav nav-pills">
+                <li role="presentation"><a href="register.html" class="href" target="_blank">注册</a></li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

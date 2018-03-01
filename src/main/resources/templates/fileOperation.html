@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>文件操作界面</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+</head>
+<body>
+<div th:unless="${#lists.isEmpty(files)}">
+    <dl th:each="file : ${files}">
+        <sapn th:text="${file.filename}">File</sapn>
+        <span th:text="${file.filesize}">FileSize</span>
+        <span th:text="${file.fileupdatetime}">FileUpdateTime</span>
+    </dl>
+</div>
+<div th:if="${#lists.isEmpty(files)}">
+    <p>你没有上传任何文件!</p>
+</div>
+<hr />
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-3 column">
+            <h4>文件操作界面</h4>
+            <form id="upload" enctype="multipart/form-data" method="post" action="/front/uploadFileAction">
+                <input type="file" name="uploadFile"/>
+                <br/>
+                <input type="button" value="文件上传" onclick="doUpload()"/>
+            </form>
+            <br/>
+            <input type="button" value="下载文件" onclick="doDownload()"/>
+            <form id="download" method="post" action="/front/downloadFileAction">
+            </form>
+            <span style="position:absolute; right:0px; top: 20px;">
+            <a href="/front/logout">注销</a></span>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function doUpload() {
+        var upl = document.getElementById("upload");
+        upl.submit();
+    }
+    function doDownload() {
+        var upl = document.getElementById("download");
+        upl.submit();
+    }
+</script>
+
+</body>
+</html>

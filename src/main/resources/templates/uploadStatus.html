@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<h1>Spring Boot - Upload Status</h1>
+
+<div th:if="${message}">
+    <h2 th:text="${message}"/>
+</div>
+<!--<a href="javascript:history.go(-1);">返回上一页</a>-->
+<input type="button" name="Submit" onclick="history.back(-1);" value="返回上一页" />
+
+<!--<a href="fileOperation.html"><input type="button" value="文件操作" /></a>-->
+
+</body>
+</html>
